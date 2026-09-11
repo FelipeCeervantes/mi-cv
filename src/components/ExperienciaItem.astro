@@ -1,0 +1,28 @@
+---
+interface Props {
+  puesto: string;
+  empresa: string;
+  periodo: string;
+  descripcion: string;
+}
+const { puesto, empresa, periodo, descripcion } = Astro.props;
+---
+<div class="item">
+  <div class="item-header">
+    <strong>{puesto}</strong>
+    <span class="periodo">{periodo}</span>
+  </div>
+  <p class="empresa">{empresa}</p>
+  <p>{descripcion}</p>
+</div>
+
+<style>
+  .item { margin-bottom: 1.25rem; }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .periodo { color: #666; font-size: 0.9rem; }
+  .empresa { font-style: italic; color: #444; margin-bottom: 0.25rem; }
+</style>

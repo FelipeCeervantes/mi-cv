@@ -1,0 +1,77 @@
+---
+import LayoutBase from "../layouts/LayoutBase.astro";
+import ExperienciaItem from "../components/ExperienciaItem.astro";
+import HabilidadBadge from "../components/HabilidadBadge.astro";
+
+const habilidades = [
+  "HTML, CSS y JavaScript",
+  "Java",
+  "Python",
+  "MySQL",
+  "Git y GitHub"
+];
+---
+<LayoutBase titulo="Isaac — CV">
+  <main>
+    <!-- Encabezado -->
+    <section id="perfil" style="text-align:center;">
+      <img src="/foto.jpg" alt="Foto de perfil" width="140" height="140"
+           style="border-radius:50%; object-fit:cover; margin-bottom:1rem;" />
+      <h1>Isaac</h1>
+      <p>Estudiante de Ingeniería en Sistemas Computacionales</p>
+      <a href="/cv-isaac.pdf" download
+         style="display:inline-block; margin-top:1rem; background:#2563eb; color:white; padding:0.6rem 1.2rem; border-radius:6px; text-decoration:none;">
+        Descargar CV en PDF
+      </a>
+    </section>
+
+    <!-- Sobre mí -->
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>
+        Tengo 23 años y estudio Ingeniería en Sistemas Computacionales en el
+        Instituto Tecnológico de Tlajomulco. Me interesa el desarrollo de
+        software y sigo aprendiendo nuevas herramientas para ir armando
+        proyectos cada vez más completos.
+      </p>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia">
+      <h2>Experiencia</h2>
+      <ExperienciaItem
+        puesto="Proyectos escolares de desarrollo"
+        empresa="Instituto Tecnológico de Tlajomulco"
+        periodo="2023 — Presente"
+        descripcion="Desarrollo de pequeñas aplicaciones y sistemas como parte de las materias de la carrera, trabajando tanto de forma individual como en equipo."
+      />
+      <ExperienciaItem
+        puesto="Soporte técnico básico"
+        empresa="Proyecto personal / familiar"
+        periodo="2022 — 2023"
+        descripcion="Apoyo en mantenimiento de equipos de cómputo y resolución de problemas básicos de software."
+      />
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <div>
+        {habilidades.map((h) => <HabilidadBadge nombre={h} />)}
+      </div>
+    </section>
+
+    <!-- Educación -->
+    <section id="educacion">
+      <h2>Educación</h2>
+      <p><strong>Ingeniería en Sistemas Computacionales</strong> — Instituto Tecnológico de Tlajomulco (2021 – Presente)</p>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Correo: l23940406@tlajomulco.tecnm.mx</p>
+      <p>Teléfono: 33 1528 4630</p>
+    </section>
+  </main>
+</LayoutBase>
